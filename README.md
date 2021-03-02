@@ -81,3 +81,5 @@ client.on('message', async (message) => {
 client.login('token-bot-here')
 ```
 # More Updates Soon!
+### Update 01/03/2021 
+- bet, work, bal. Commands Added
