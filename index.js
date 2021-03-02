@@ -92,7 +92,9 @@ client.on('message', async (message) => {
 
 client.on('message', async (message) {
   if (message.content.startsWith('!addmoney'))
-  if (message.author.id !== 'Your id') // Only owner if you want for admin just configure it
+  if (message.author.id !== 'Your id') {
+    message.channel.send('ops, u are not the owner')
+  } // Only owner if you want for admin just configure it
   let args = message.content
       .slice(message.lenght)
       .trim()
