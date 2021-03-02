@@ -85,6 +85,7 @@ client.on('message', async (message) => {
      .addField('!work', 'Work to get some money!')
      .addField('!bal', 'get your balance')
      .addField('!bet', 'This is cassino get multiple coins!')
+     .addField('!addmoney', 'somebody wants money!!!')
     message.channel.send(em)
    }
 })
