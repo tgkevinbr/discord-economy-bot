@@ -73,4 +73,4 @@ client.on('message', async (message) => {
   }
 })
 
-client.login('ODE2MDkyNTg1NTcwMzM2Nzg4.YD17cg.jLpNlxmZuE8I2ENhKPQIjOVrWAU')
+client.login('token-bot-here')
