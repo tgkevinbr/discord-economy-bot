@@ -2,6 +2,11 @@
 
 > This is a super basic economy bot for discord. if you want use got fork it. Please give a star!
 
+## The Economy is globally. if you want only in guilds just do this. <br>
+```js
+db.<add/set/subtract/fetch>(`monin_${message.guild.id}_${message.author.id}`)
+```
+## index.js
 ```js
 const Discord = require('discord.js')
 const db = require('quick.db')
