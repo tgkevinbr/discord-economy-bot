@@ -18,6 +18,10 @@ function isOdd(num) {
   else if ((num % 2) == 1) return true;
 }
 
+// ON_READY
+client.on('ready', () => {
+  console.log('Im here!')
+})
 // ------------- COMMANDS ----------------
 client.on('message', async (message) => {
   if (message.content.startsWith('!work')) {
@@ -83,8 +87,48 @@ client.on('message', async (message) => {
   }
 })
 
-client.login('token-bot-here')
+client.on('message', async (message) => {
+  if (message.content.startsWith('!help')) {
+    let em = new Discord.MessageEmbed()
+     .setTitle('HELP')
+     .setColor('RANDOM')
+     .addField('!work', 'Work to get some money!')
+     .addField('!bal', 'get your balance')
+     .addField('!bet', 'This is cassino get multiple coins!')
+    message.channel.send(em)
+   }
+})
+
+client.on('message', async (message) {
+  if (message.content.startsWith('!addmoney'))
+  if (message.author.id !== 'Your id') // Only owner if you want for admin just configure it
+  let args = message.content
+      .slice(message.lenght)
+      .trim()
+      .split(/ +/g)
+  let cmd = args.shift().toLowerCase()
+
+  let add = args[1]
+  let usr = message.mentions.users.first() || message.author
+
+  if (add) {
+    return message.channel.send('type the monin to add!')
+  }
+
+  if (usr) {
+    return message.channel.send('mention a user')
+  }
+  message.channel.send(`sucess added monin to ${usr} \`${add}\` ;)`)
+  db.add(`monin_${usr.id}`, add)
+})
+
+client.login(process.env.TOKEN)
 ```
+# Use .env for protect your token bot
+```json
+TOKEN="TOKEN HERE"
+```
+
 # More Updates Soon!
 ### Update 01/03/2021 
-- bet, work, bal. Commands Added
+- bet, work, bal, addmoney. Commands Added
